@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio || LinkTree</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="min-h-screen py-10 px-4 flex justify-center items-center">
+    <div class="max-w-md w-full glassmorphism p-8">
+      <div class="flex flex-col items-center mb-8">
+        <div class="w-28 h-28 rounded-full overflow-hidden mb-4 profile-img">
+          <div class="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
+            <img src="img/profile.jpg" alt="profile" class="w-full h-full" />
+          </div>
+        </div>
+        <h1 class="text-white text-2xl font-bold mb-1">WILDAN</h1>
+        <p class="text-white text-md opacity-80 mb-3">Content Creator</p>
+        <p class="text-white text-sm text-center opacity-70 mb-4">
+          Berbagi ilmu tentang pembuatan tampilan website dan pengalaman dalam
+          pengembangan antarmuka pengguna
+        </p>
+
+        <div class="flex space-x-3 mb-6">
+          <a
+            href="https://www.instagram.com/wildanhdyt505?igsh=MWI4dDBjbmtkY2wzag=="
+            class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
+          >
+            <i data-feather="instagram" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="https://github.com/mwildanhidayat"
+            class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
+          >
+            <i data-feather="github" class="w-5 h-5"></i>
+          </a>
+          <a
+            href="email.html"
+            class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
+          >
+            <i data-feather="mail" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- World Clock Display -->
+      <div class="world-clock mb-6 text-center">
+        <div class="text-white text-sm opacity-80 mb-2">Waktu Dunia</div>
+        <div class="flex justify-center space-x-4">
+          <div class="time-zone">
+            <div class="text-white font-medium">WIB</div>
+            <div id="wib-time" class="text-white text-sm opacity-80">00:00:00</div>
+          </div>
+          <div class="time-zone">
+            <div class="text-white font-medium">WITA</div>
+            <div id="wita-time" class="text-white text-sm opacity-80">00:00:00</div>
+          </div>
+          <div class="time-zone">
+            <div class="text-white font-medium">WIT</div>
+            <div id="wit-time" class="text-white text-sm opacity-80">00:00:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <a
+          href="coming.html"
+          class="link-card glassmorphism flex items-center p-4 rounded-xl text-white"
+        >
+          <i data-feather="globe" class="w-5 h-5 mr-3"></i>
+          <span>Website Resmi</span>
+        </a>
+
+        <a
+          href="https://whatsapp.com/channel/0029VaxfMKpFnSz5RJDILf0J"
+          class="link-card glassmorphism flex items-center p-4 rounded-xl text-white"
+        >
+          <i data-feather="inbox" class="w-5 h-5 mr-3"></i>
+          <span>Channel WhatsApp</span>
+        </a>
+
+        <a
+          href="https://chat.whatsapp.com/L6rIRc3a1hIAQxhgEPGe3"
+          class="link-card glassmorphism flex items-center p-4 rounded-xl text-white"
+        >
+          <i data-feather="inbox" class="w-5 h-5 mr-3"></i>
+          <span>Group WhatsApp</span>
+        </a>
+
+        <a
+          href="https://saweria.co/TacoFury"
+          class="link-card glassmorphism flex items-center p-4 rounded-xl text-white"
+        >
+          <i data-feather="coffee" class="w-5 h-5 mr-3"></i>
+          <span>Traktir Kopi</span>
+        </a>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-white text-xs opacity-70">WildanHidayat</p>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+
+      document.querySelectorAll(".link-card").forEach(card => {
+        card.addEventListener("mouseenter", () => {
+          card.classList.add("transform", "scale-102");
+        });
+
+        card.addEventListener("mouseleave", () => {
+          card.classList.remove("transform", "scale-102");
+        });
+      });
+      
+      function updateWorldTime() {
+        const now = new Date();
+        
+        const wibTime = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+        document.getElementById('wib-time').textContent = wibTime.toUTCString().split(' ')[4];
+        
+        const witaTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+        document.getElementById('wita-time').textContent = witaTime.toUTCString().split(' ')[4];
+        
+        const witTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+        document.getElementById('wit-time').textContent = witTime.toUTCString().split(' ')[4];
+      }
+      
+      updateWorldTime();
+      setInterval(updateWorldTime, 1000);
+    </script>
+  </body>
+</html>
