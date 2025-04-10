@@ -4,6 +4,19 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.rotate-animation {
+        animation: rotate 5s linear infinite;
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
 .glassmorphism {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
