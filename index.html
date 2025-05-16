@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="id">
   <head>
@@ -10,72 +11,65 @@
     />
     <style>
         body {
-  background-image: url("https://files.catbox.moe/yrxz06.jpg");
-  height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.rotate-animation {
-        animation: rotate 5s linear infinite;
-      }
-      
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
+          background-image: url("https://files.catbox.moe/yrxz06.jpg");
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         }
-        to {
-          transform: rotate(360deg);
+
+        .rotate-animation {
+            animation: rotate 5s linear infinite;
         }
-      }
 
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
 
-.link-card {
-  transition: all 0.3s ease;
-}
+        .glassmorphism {
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          border-radius: 16px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
 
-.world-clock {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 12px;
-}
+        .link-card {
+          transition: all 0.3s ease;
+        }
 
-.time-zone {
-  min-width: 60px;
-}
+        .world-clock {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(10px);
+          border-radius: 12px;
+          padding: 12px;
+        }
 
-.link-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.25);
-}
+        .time-zone {
+          min-width: 60px;
+        }
 
-.profile-img {
-  border: 3px solid rgba(255, 255, 255, 0.5);
-}
+        .link-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+          background: rgba(255, 255, 255, 0.25);
+        }
 
-.social-icon {
-  transition: all 0.3s ease;
-}
+        .profile-img {
+          border: 3px solid rgba(255, 255, 255, 0.5);
+        }
 
-.social-icon:hover {
-  transform: scale(1.2);
-}
+        .social-icon {
+          transition: all 0.3s ease;
+        }
 
+        .social-icon:hover {
+          transform: scale(1.2);
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   </head>
 
-  <body class="min-h-screen p-4 flex justify-center items-center">
-    <!-- Audio Element (hidden) -->
+  <body class="min-h-screen p-4 flex justify-center items-center overflow-auto">
     <audio id="bgMusic" loop>
       <source src="https://files.catbox.moe/mfi2zp.mp4" type="audio/mpeg">
       Browser Anda tidak mendukung elemen audio.
@@ -89,158 +83,91 @@
         <h1 class="text-white text-xl font-bold mb-1">WILDAN</h1>
         <p class="text-white text-sm opacity-80 mb-2">Content Creator</p>
         <p class="text-white text-xs text-center opacity-70 mb-3">
-          Berbagi ilmu tentang pembuatan tampilan website dan pengalaman dalam
-          pengembangan antarmuka pengguna
+          Berbagi ilmu tentang pembuatan tampilan website dan pengalaman dalam pengembangan antarmuka pengguna
         </p>
 
         <div class="flex space-x-2 mb-4">
-          <a
-            href="https://www.instagram.com/wildanhdyt505?igsh=MWI4dDBjbmtkY2wzag=="
-            class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
-          >
+          <a href="https://www.instagram.com/wildanhdyt505?igsh=MWI4dDBjbmtkY2wzag==" class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20">
             <i data-feather="instagram" class="w-4 h-4"></i>
           </a>
-          <a
-            href="https://github.com/mwildanhidayat"
-            class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
-          >
+          <a href="https://github.com/mwildanhidayat" class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20">
             <i data-feather="github" class="w-4 h-4"></i>
-          </a>
-          <a
-            href="https://email-contact-sigma.vercel.app/"
-            class="social-icon text-white p-2 rounded-full hover:bg-white hover:bg-opacity-20"
-          >
-            <i data-feather="mail" class="w-4 h-4"></i>
           </a>
         </div>
       </div>
 
-      <!-- World Clock Display -->
       <div class="world-clock mb-4 text-center">
         <div class="text-white text-xs opacity-80 mb-1">Waktu Indonesia</div>
         <div class="flex justify-center space-x-3">
-          <div class="time-zone">
-            <div class="text-white text-sm font-medium">WIB</div>
-            <div id="wib-time" class="text-white text-xs opacity-80">00:00:00</div>
-          </div>
-          <div class="time-zone">
-            <div class="text-white text-sm font-medium">WITA</div>
-            <div id="wita-time" class="text-white text-xs opacity-80">00:00:00</div>
-          </div>
-          <div class="time-zone">
-            <div class="text-white text-sm font-medium">WIT</div>
-            <div id="wit-time" class="text-white text-xs opacity-80">00:00:00</div>
-          </div>
+          <div class="time-zone"><div class="text-white text-sm font-medium">WIB</div><div id="wib-time" class="text-white text-xs opacity-80">00:00:00</div></div>
+          <div class="time-zone"><div class="text-white text-sm font-medium">WITA</div><div id="wita-time" class="text-white text-xs opacity-80">00:00:00</div></div>
+          <div class="time-zone"><div class="text-white text-sm font-medium">WIT</div><div id="wit-time" class="text-white text-xs opacity-80">00:00:00</div></div>
         </div>
       </div>
 
       <div class="space-y-3">
-        <a
-          href="#"
-          class="link-card flex items-center p-3 rounded-lg text-white text-sm"
-        >
-          <i data-feather="globe" class="w-4 h-4 mr-2"></i>
-          <span>Website API</span>
-        </a>
-
-        <a
-          href="https://whatsapp.com/channel/0029Vb60HKM8KMqiYUHVBL2c"
-          class="link-card flex items-center p-3 rounded-lg text-white text-sm"
-        >
-          <i data-feather="inbox" class="w-4 h-4 mr-2"></i>
-          <span>Channel WhatsApp</span>
-        </a>
-
-        <a
-          href="https://saweria.co/TacoFury"
-          class="link-card flex items-center p-3 rounded-lg text-white text-sm"
-        >
-          <i data-feather="coffee" class="w-4 h-4 mr-2"></i>
-          <span>Traktir Kopi</span>
-        </a>
+        <a href="#" class="link-card flex items-center p-3 rounded-lg text-white text-sm"><i data-feather="globe" class="w-4 h-4 mr-2"></i><span>Website API</span></a>
+        <a href="https://whatsapp.com/channel/0029Vb60HKM8KMqiYUHVBL2c" class="link-card flex items-center p-3 rounded-lg text-white text-sm"><i data-feather="inbox" class="w-4 h-4 mr-2"></i><span>Channel WhatsApp</span></a>
+        <a href="https://saweria.co/TacoFury" class="link-card flex items-center p-3 rounded-lg text-white text-sm"><i data-feather="coffee" class="w-4 h-4 mr-2"></i><span>Traktir Kopi</span></a>
       </div>
 
-      <div class="mt-6 text-center">
-        <p class="text-white text-xs opacity-70">WildanHidayat</p>
+      <!-- Form Kontak -->
+      <div class="mt-6">
+        <form action="https://formspree.io/f/xzzeayjy" method="POST" class="glassmorphism p-4 rounded-xl space-y-4">
+          <h2 class="text-white text-lg font-semibold text-center">Kontak Saya</h2>
+          <input type="text" name="name" placeholder="Nama Anda" required class="w-full px-3 py-2 rounded-md bg-white bg-opacity-10 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white focus:bg-opacity-20 transition" />
+          <input type="email" name="email" placeholder="Email Anda" required class="w-full px-3 py-2 rounded-md bg-white bg-opacity-10 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white focus:bg-opacity-20 transition" />
+          <textarea name="message" placeholder="Pesan Anda" required class="w-full px-3 py-2 h-32 rounded-md bg-white bg-opacity-10 text-white placeholder-white resize-none focus:outline-none focus:ring-2 focus:ring-white focus:bg-opacity-20 transition"></textarea>
+          <button type="submit" class="w-full bg-white bg-opacity-20 text-white py-2 rounded-md hover:bg-opacity-30 transition uppercase tracking-wider">Kirim Pesan</button>
+        </form>
       </div>
+
+      <div class="mt-6 text-center"><p class="text-white text-xs opacity-70">WildanHidayat</p></div>
     </div>
 
     <script>
-        
-// Fungsi untuk mengupdate waktu
-function updateIndonesiaTime() {
-    const now = new Date();
-    
-    // Waktu Indonesia Barat (WIB) UTC+7
-    const wibTime = new Date(now.getTime() + (7 * 60 * 60 * 1000));
-    
-    // Waktu Indonesia Tengah (WITA) UTC+8
-    const witaTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
-    
-    // Waktu Indonesia Timur (WIT) UTC+9
-    const witTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
-    
-    // Format waktu menjadi HH:MM:SS
-    const formatTime = (date) => {
-        return date.toISOString().substr(11, 8);
-    };
-    
-    // Update tampilan
-    document.getElementById('wib-time').textContent = formatTime(wibTime);
-    document.getElementById('wita-time').textContent = formatTime(witaTime);
-    document.getElementById('wit-time').textContent = formatTime(witTime);
-}
+      function updateIndonesiaTime() {
+          const now = new Date();
+          const wibTime = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+          const witaTime = new Date(now.getTime() + (8 * 60 * 60 * 1000));
+          const witTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+          const formatTime = (date) => date.toISOString().substr(11, 8);
+          document.getElementById('wib-time').textContent = formatTime(wibTime);
+          document.getElementById('wita-time').textContent = formatTime(witaTime);
+          document.getElementById('wit-time').textContent = formatTime(witTime);
+      }
 
-// Inisialisasi ketika DOM siap
-document.addEventListener('DOMContentLoaded', function() {
-    // Inisialisasi feather icons
-    if (typeof feather !== 'undefined') {
-        feather.replace();
-    } else {
-        console.error('Feather Icons not loaded');
-    }
-    
-    // Jalankan pertama kali
-    updateIndonesiaTime();
-    
-    // Update setiap detik
-    setInterval(updateIndonesiaTime, 1000);
-});
+      document.addEventListener('DOMContentLoaded', function () {
+          if (typeof feather !== 'undefined') feather.replace();
+          updateIndonesiaTime();
+          setInterval(updateIndonesiaTime, 1000);
 
-document.addEventListener('DOMContentLoaded', function() {
-        const profileImg = document.getElementById('profileImg');
-        const profileImage = document.getElementById('profileImage');
-        const bgMusic = document.getElementById('bgMusic');
-        let isPlaying = false;
-        
-        // Pastikan musik dimulai hanya setelah interaksi pengguna
-        profileImg.addEventListener('click', function() {
-          if (isPlaying) {
-            bgMusic.pause();
-            profileImg.classList.remove('rotate-animation');
-            isPlaying = false;
-          } else {
-            bgMusic.play()
-              .then(() => {
-                profileImg.classList.add('rotate-animation');
-                isPlaying = true;
-              })
-              .catch(error => {
-                console.log('Autoplay prevented:', error);
-                // Beri tahu pengguna untuk mengklik untuk memutar musik
-                alert('Silakan klik gambar profil lagi untuk memutar musik.');
-              });
-          }
-        });
-        
-        // Hentikan animasi ketika musik selesai (meskipun seharusnya loop)
-        bgMusic.addEventListener('ended', function() {
-          profileImg.classList.remove('rotate-animation');
-          isPlaying = false;
-        })
-        });
-        
+          const profileImg = document.getElementById('profileImg');
+          const bgMusic = document.getElementById('bgMusic');
+          let isPlaying = false;
+
+          profileImg.addEventListener('click', function () {
+              if (isPlaying) {
+                  bgMusic.pause();
+                  profileImg.classList.remove('rotate-animation');
+                  isPlaying = false;
+              } else {
+                  bgMusic.play()
+                      .then(() => {
+                          profileImg.classList.add('rotate-animation');
+                          isPlaying = true;
+                      })
+                      .catch(error => {
+                          alert('Silakan klik gambar profil lagi untuk memutar musik.');
+                      });
+              }
+          });
+
+          bgMusic.addEventListener('ended', function () {
+              profileImg.classList.remove('rotate-animation');
+              isPlaying = false;
+          });
+      });
     </script>
-    
   </body>
 </html>
